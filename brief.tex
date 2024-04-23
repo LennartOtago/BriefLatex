@@ -1,0 +1,70 @@
+%%
+% German Latex Letter Template 
+% Use if you want to crate a Letter in DIN A4. You can use it in English and German 
+% as well, just set language at begining of plain text.
+% Created by Jan Boelmann @ Nov. 2016 Jan.boelmann@live.de
+%%
+
+\documentclass[
+    sender,
+    paper=a4,
+    version=last,
+    fontsize=11pt,
+    DIV=13,
+    BCOR=0mm]{scrlttr2}
+\parskip3mm
+\parindent0mm % if you want to have no lineskip
+\usepackage[english,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+% Set Font: sans serif Latin Modern
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+% Set Page layout:
+\usepackage{changepage}
+%\changepage{text height}{text width}{even-side margin}
+%{odd-side margin}{column sep.}
+%{topmargin}{headheight}{headsep}{footskip}
+\changepage{+3cm}{}{}{}{}{}{}{}{-5cm}
+%\LoadLetterOption{sender}
+
+\begin{document}
+% Set Appendix text at very end (dubble point will be set automatically)
+\setkomavar*{enclseparator}{Appendix}
+% subject, date, place:
+\setkomavar{subject}{Subject: Prolongation of Deadline}
+\setkomavar{date}{the 8th of March 2022}
+\setkomavar{place}{Brühl, Germany}
+
+
+% Set recipient of letter
+\begin{letter}{
+    Renu Kumar \\
+    Senior Immigration Officer\\
+    Immigration New Zealand
+}
+\opening{Dear Renu,}
+
+% Write here your Letter text. You can choose here the language for typeset. ("english", or "ngerman")
+\selectlanguage{english}
+%\parindent2mm
+with this letter, I kindly ask you to prolong the deadline for the hand-in of required documents for my student visa application:\\
+\textbf{Application number :} 20700129\\
+\textbf{Client number :} 76376893
+
+I am in contact with my supervisor Colin Fox but we need more time to gather all required documents.
+Therefore I ask you to extend the set time so that we can provide all the needed information.
+
+Attached you find a supportive document from Colin Fox.
+
+%\selectlanguage{english}%Choose language for closing text
+\closing{kind regards} % use "Mit freundlich Grüßen" i.e. 
+%\encl{annex}
+% end of letter
+\end{letter}
+
+\end{document}
+
